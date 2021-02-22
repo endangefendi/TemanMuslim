@@ -2,6 +2,8 @@ package com.fend.temanmuslim.activity;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,13 +32,13 @@ public class BacaanSholatActivity extends AppCompatActivity implements BacaanSho
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bacaan_sholat);
-//        ImageButton iv_back= findViewById(R.id.iv_back);
-//        iv_back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onBackPressed();
-//            }
-//        });
+        ImageButton iv_back= findViewById(R.id.iv_back);
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         list = new ArrayList<>();
         adapter = new BacaanSholatAdapter(this, this, list);

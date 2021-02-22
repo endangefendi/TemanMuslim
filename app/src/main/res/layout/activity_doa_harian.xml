@@ -8,9 +8,7 @@
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/_5sdp"
-        android:paddingRight="@dimen/_5sdp">
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/iv_back"
@@ -18,30 +16,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
+            android:layout_marginStart="@dimen/_5sdp"
             android:padding="@dimen/_8sdp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true" />
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/iv_back"
             android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:layout_toEndOf="@+id/iv_back"
             android:text="Doa Harian"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_17sdp"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_alignStart="@+id/title"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:text="Bacaan doa sehari-hari dan terjemahan"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_below="@id/text"
+            android:layout_marginTop="@dimen/_10sdp"/>
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="@dimen/_75sdp"
-        android:layout_height="@dimen/_75sdp"
-        android:layout_margin="@dimen/_10sdp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:src="@drawable/ic_pray" />
 
     <androidx.cardview.widget.CardView
@@ -49,10 +72,11 @@
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:layout_toStartOf="@+id/logo"
+        android:layout_toEndOf="@+id/logo"
         app:cardCornerRadius="@dimen/_10sdp">
 
         <LinearLayout
@@ -71,7 +95,7 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:hint="Cari doa . . ."
+                android:hint="Mau cari doa apa?"
                 android:imeActionLabel="Done"
                 android:imeOptions="actionDone"
                 android:inputType="text"
@@ -116,7 +140,7 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="@dimen/_10sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -127,8 +151,11 @@
                     android:id="@+id/rvListDoa"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp" />
-
+                    android:layout_margin="@dimen/_2sdp" />
+                <include
+                    android:id="@+id/lyt_no_item"
+                    layout="@layout/no_item"
+                    android:visibility="visible" />
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +33,7 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
     private DoaAdapter adapter;
     private RecyclerView recyclerView;
     private ImageButton bt_clear, btn_cari;
+    private View lyt_no_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
         list = new ArrayList<>();
         adapter = new DoaAdapter(this, this, list);
 
+        lyt_no_item = findViewById(R.id.lyt_no_item);
+        lyt_no_item.setVisibility(View.GONE);
         btn_cari = findViewById(R.id.btn_cari);
         bt_clear = findViewById(R.id.btn_clear);
         recyclerView = findViewById(R.id.rvListDoa);
@@ -95,6 +99,9 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
         public void afterTextChanged(Editable editable) {
             if (view.getId() == R.id.searchDoa) {
                 adapter.filter(editable.toString().trim());
+            }
+            if (list.size() == 0){
+                lyt_no_item.setVisibility(View.VISIBLE);
             }
         }
     }
