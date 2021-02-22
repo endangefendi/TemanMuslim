@@ -1,10 +1,22 @@
 package com.fend.temanmuslim.activity;
 
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fend.temanmuslim.R;
@@ -21,6 +33,14 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DashboardActivity.this, DoaHarianActivity.class));
+            }
+        });
+
+        LinearLayout frame_about = findViewById(R.id.frame_about);
+        frame_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popUpLabel();
             }
         });
 
@@ -47,5 +67,31 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this, NiatSholatWajibActivity.class));
             }
         });
+    }
+
+    private AlertDialog.Builder alert;
+    private AlertDialog ad;
+
+    private void popUpLabel() {
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        assert inflater != null;
+        @SuppressLint("InflateParams")
+        View alertLayout = inflater.inflate(R.layout.dialog_about, null);
+
+        alert = new AlertDialog.Builder(this);
+        alert.setView(alertLayout);
+        alert.setCancelable(false);
+
+        ad = alert.show();
+        ImageView imageView = alertLayout.findViewById(R.id.btn_close);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+
+            }
+        });
+        ad.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 }

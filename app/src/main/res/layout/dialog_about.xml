@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/shape_circle"
+        android:backgroundTint="@color/colorWarning"
+        android:src="@drawable/ic_clear"
+        app:tint="@color/white" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/btn_close"
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_290sdp"
+        android:layout_margin="@dimen/_5sdp"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoLink="web"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="The icon or image in this application is obtained from the free version https://www.flaticon.com and https://pngtree.com/so/muslim"/>
+
+
+            <TextView
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Sumberdata di dapat dari sana sini sehingga menjadi aplikasi hehehe"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
