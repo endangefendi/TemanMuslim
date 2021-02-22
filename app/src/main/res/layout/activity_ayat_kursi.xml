@@ -6,7 +6,6 @@
     android:background="@color/green"
     android:orientation="vertical">
 
-
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -70,13 +69,14 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/bismillah"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_20sdp"
+                android:textSize="@dimen/_25sdp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="More Fonts..."
                 android:gravity="center"
                 android:text="Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang"
                 android:textColor="@android:color/black"
@@ -92,29 +92,31 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:text="Ayat Kursi"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_20sdp"
+                android:textSize="@dimen/_25sdp"
                 android:textStyle="bold"/>
 
-            <TextView
+            <WebView
                 android:id="@+id/txtLatin"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:text="Ayat Kursi"
+                android:scrollbars="none"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="italic" />
 
-            <TextView
+            <WebView
                 android:id="@+id/txtTerjemahan"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
+                android:scrollbars="none"
                 android:text="Ayat Kursi"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_12sdp" />

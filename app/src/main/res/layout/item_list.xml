@@ -88,15 +88,17 @@
                         android:layout_marginEnd="@dimen/_7sdp"
                         android:text="@string/app_name"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_20sdp"
+                        android:textSize="@dimen/_19sdp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/tvLatin"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-avenir_medium_09"
                         android:text="@string/app_name"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_12sdp"
@@ -104,10 +106,12 @@
 
                     <TextView
                         android:id="@+id/tvTerjemahan"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:fontFamily="sans-avenir_medium_09"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
                         android:text="@string/app_name"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_12sdp" />

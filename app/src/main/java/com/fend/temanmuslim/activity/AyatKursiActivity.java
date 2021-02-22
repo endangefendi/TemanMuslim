@@ -3,6 +3,7 @@ package com.fend.temanmuslim.activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -18,11 +19,15 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
+import static com.fend.temanmuslim.utils.Constans.close_html;
+import static com.fend.temanmuslim.utils.Constans.open_html;
+import static com.fend.temanmuslim.utils.Constans.open_html_miring;
+
 public class AyatKursiActivity extends AppCompatActivity {
 
     TextView txtAyat;
-    TextView txtLatin;
-    TextView txtTerjemahan;
+    WebView txtLatin;
+    WebView txtTerjemahan;
 
     AyatKursiModel item;
     @Override
@@ -59,8 +64,11 @@ public class AyatKursiActivity extends AppCompatActivity {
                     item = new AyatKursiModel(tafsir, translation, arabic, latin);
                 }
                 txtAyat.setText(item.getArabic());
-                txtLatin.setText(item.getLatin());
-                txtTerjemahan.setText(item.getTranslation());
+//                txtLatin.setText(item.getLatin());
+//                txtTerjemahan.setText(item.getTranslation());
+                txtLatin.loadDataWithBaseURL(null, open_html_miring+item.getLatin()+close_html, "text/html", "UTF-8","about:blank");
+                txtTerjemahan.loadDataWithBaseURL(null, open_html+item.getTranslation()+close_html, "text/html", "UTF-8","about:blank");
+
 
             } catch (JSONException e) {
                 e.printStackTrace();

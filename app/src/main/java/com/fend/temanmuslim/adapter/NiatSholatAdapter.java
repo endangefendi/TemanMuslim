@@ -43,7 +43,7 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
     @NonNull
     @Override
     public NiatSholatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_doa, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
         NiatSholatAdapter.ViewHolder vh = new NiatSholatAdapter.ViewHolder(view);
         return vh;
     }
@@ -79,16 +79,7 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
         holder.tvArabic.setText(item.getArabic());
         holder.tvLatin.setText(item.getLatin());
         holder.tvTerjemahan.setText(item.getTerjemahan());
-//        holder.tvArabic.loadDataWithBaseURL(null, open_html_end+item.getArabic()+close_html, "text/html", "UTF-8","about:blank");
-//        holder.tvLatin.loadDataWithBaseURL(null, open_html_italic+item.getLatin()+close_html, "text/html", "UTF-8","about:blank");
-//        holder.tvTerjemahan.loadDataWithBaseURL(null, open_html+item.getTranslation()+close_html, "text/html", "UTF-8","about:blank");
 
-//        holder.expansionLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (listener != null) listener.onItemClicked(position, item);
-//            }
-//        });
     }
 
     @Override
@@ -101,7 +92,6 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
         TextView tvId, tvTitle;
         TextView tvTerjemahan,tvArabic, tvLatin;
 
-//        WebView tvTerjemahan,tvArabic, tvLatin;
         ExpansionLayout expansionLayout;
         public ViewHolder(@NonNull View v) {
             super(v);
