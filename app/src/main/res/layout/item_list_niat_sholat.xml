@@ -88,7 +88,7 @@
                         android:layout_marginEnd="@dimen/_7sdp"
                         android:text="@string/app_name"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_19sdp"
+                        android:textSize="@dimen/_25sdp"
                         android:textStyle="bold"/>
 
                     <TextView

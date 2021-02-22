@@ -43,7 +43,7 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
     @NonNull
     @Override
     public NiatSholatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list_niat_sholat, parent, false);
         NiatSholatAdapter.ViewHolder vh = new NiatSholatAdapter.ViewHolder(view);
         return vh;
     }

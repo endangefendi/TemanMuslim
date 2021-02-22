@@ -43,7 +43,7 @@ public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.ViewHolder> {
     @NonNull
     @Override
     public DoaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list_niat_sholat, parent, false);
         DoaAdapter.ViewHolder vh = new DoaAdapter.ViewHolder(view);
         return vh;
     }
