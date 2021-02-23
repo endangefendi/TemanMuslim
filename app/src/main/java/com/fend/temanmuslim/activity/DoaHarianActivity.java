@@ -8,7 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,6 +50,8 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
         list = new ArrayList<>();
         adapter = new DoaAdapter(this, this, list);
 
+        TextView no_item_message = findViewById(R.id.no_item_message);
+        no_item_message.setText(R.string.doa_kosong);
         lyt_no_item = findViewById(R.id.lyt_no_item);
         lyt_no_item.setVisibility(View.GONE);
         btn_cari = findViewById(R.id.btn_cari);

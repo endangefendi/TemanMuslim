@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_green"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_wave"
+        >
 
         <ImageButton
             android:id="@+id/iv_back"
@@ -17,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
-            android:layout_marginStart="@dimen/_5sdp"
+            android:tint="@color/black"
             android:padding="@dimen/_8sdp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true" />
@@ -27,34 +29,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/iv_back"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_toStartOf="@+id/frame_icon"
             android:layout_toEndOf="@+id/iv_back"
-            android:text="Bacaan Shalat"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/_17sdp"
-            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/frame_icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
-            android:layout_alignStart="@+id/title"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:text="Bacaan shalat dari doa Iftitah sampai Salam"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_12sdp"
-            android:textStyle="bold" />
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_10sdp">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/icon"
+                    android:background="@drawable/bg_wave"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/yunus"
+                    />
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/white"
-            android:layout_below="@id/text"
-            android:layout_marginTop="@dimen/_10sdp"/>
+            android:background="@color/hint"
+            android:layout_below="@id/frame_icon"
+            android:layout_marginTop="@dimen/_15sdp"/>
     </RelativeLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -63,26 +78,32 @@
         android:layout_below="@id/toolbar"
         android:layout_marginTop="@dimen/_15sdp"
         android:background="@drawable/bg_rounded_rect">
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_marginTop="@dimen/_10sdp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvBacaanShalat"
+                <WebView
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/_2sdp" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="Ayat Kursi"
+                    android:scrollbars="none"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="italic" />
+
 
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

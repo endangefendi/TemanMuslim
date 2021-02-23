@@ -15,4 +15,6 @@
 
     <!--text tampilan-->
     <string name="bismillah">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</string>
+    <string name="doa_kosong">Opppps...\nMaafin yaa untuk sekarang doa yang dicari tidak ada.</string>
+    <string name="kisah_kosong">Opppps...\nMaafin yaa untuk sekarang Kisah nabi yang dicari tidak ada.</string>
 </resources>

@@ -17,11 +17,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TemanMuslim"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.DetailKisahActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".activity.KisahNabiActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".activity.NiatSholatWajibActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".activity.BacaanSholatActivity"
             android:configChanges="orientation|screenSize"

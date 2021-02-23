@@ -30,7 +30,7 @@
             android:layout_marginEnd="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_3sdp"
             android:layout_toEndOf="@+id/iv_back"
-            android:text="Doa Harian"
+            android:text="Kisah Nabi"
             android:textSize="@dimen/_17sdp"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
@@ -42,7 +42,7 @@
             android:layout_below="@+id/title"
             android:layout_alignStart="@+id/title"
             android:layout_marginEnd="@dimen/_5sdp"
-            android:text="Bacaan doa sehari-hari dan terjemahan"
+            android:text="Bacaan kisah nabi berdasarkan alquran"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_12sdp"
@@ -65,7 +65,7 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:src="@drawable/ic_pray" />
+        android:src="@drawable/ic_man" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/frame_search"
@@ -95,7 +95,7 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:hint="Mau cari doa apa?"
+                android:hint="Mau cari kisah nabi?"
                 android:imeActionLabel="Done"
                 android:imeOptions="actionDone"
                 android:inputType="text"
@@ -148,7 +148,7 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvListDoa"
+                    android:id="@+id/rvListKisah"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/_2sdp" />

@@ -63,9 +63,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.1'
     implementation 'com.google.firebase:firebase-database:19.5.1'
 
-
-    implementation 'com.makeramen:roundedimageview:2.3.0'
-
-    //textview justify
-    implementation 'com.codesgood:justifiedtextview:1.1.0'
 }

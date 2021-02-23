@@ -67,6 +67,13 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this, NiatSholatWajibActivity.class));
             }
         });
+        LinearLayout linearKisahNabi = findViewById(R.id.linearKisahNabi);
+        linearKisahNabi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this, KisahNabiActivity.class));
+            }
+        });
     }
 
     private AlertDialog.Builder alert;
