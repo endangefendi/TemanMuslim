@@ -23,7 +23,7 @@ public class BacaanSholatAdapter extends RecyclerView.Adapter<BacaanSholatAdapte
     private List<BacaanSholatModel> list;
     private final ArrayList<BacaanSholatModel> listFilter;
 
-    private OnItemClickListener listener;
+    final OnItemClickListener listener;
 
     public BacaanSholatAdapter(Context context, OnItemClickListener listener, List<BacaanSholatModel> list) {
         this.context = context;
@@ -88,7 +88,7 @@ public class BacaanSholatAdapter extends RecyclerView.Adapter<BacaanSholatAdapte
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvId, tvTitle;
         TextView tvTerjemahan,tvArabic, tvLatin;
 

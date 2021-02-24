@@ -23,7 +23,7 @@ public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.ViewHolder> {
     private List<DoaModel> list;
     private final ArrayList<DoaModel> listFilter;
 
-    private OnItemClickListener listener;
+    final OnItemClickListener listener;
 
     public DoaAdapter(Context context, OnItemClickListener listener,List<DoaModel> list) {
         this.context = context;
@@ -88,7 +88,7 @@ public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.ViewHolder> {
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvId, tvTitle;
         TextView tvTerjemahan,tvArabic, tvLatin;
 

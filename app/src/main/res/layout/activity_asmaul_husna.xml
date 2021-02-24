@@ -60,6 +60,7 @@
     <com.fend.temanmuslim.utils.CustomGridView
         android:id="@+id/rvAsmaulHusna"
         android:scrollbars="none"
+        android:layoutDirection="rtl"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -25,7 +25,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -50,20 +49,19 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         TextView version = findViewById(R.id.versi);
-        version.setText("Version "+ BuildConfig.VERSION_NAME);
+        String vers ="Version "+ BuildConfig.VERSION_NAME;
+        version.setText(vers);
         mAuth = FirebaseAuth.getInstance();
         mAuth.signInAnonymously()
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            startProcess(user.getUid());
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.e(TAG, "signInAnonymously:failure", task.getException());
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        assert user != null;
+                        startProcess(user.getUid());
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.e(TAG, "signInAnonymously:failure", task.getException());
                     }
                 });
 

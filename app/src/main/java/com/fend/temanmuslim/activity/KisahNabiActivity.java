@@ -41,12 +41,9 @@ public class KisahNabiActivity extends AppCompatActivity implements KisahNabiAda
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kisah_nabi);
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
         TextView no_item_message = findViewById(R.id.no_item_message);
         no_item_message.setText(R.string.kisah_kosong);
 

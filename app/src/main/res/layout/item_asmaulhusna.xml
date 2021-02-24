@@ -24,6 +24,7 @@
                 android:id="@+id/relativeRow"
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
                 android:background="@drawable/ic_star">
 
                 <TextView

@@ -23,7 +23,7 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
     private List<NiatSholatModel> list;
     private final ArrayList<NiatSholatModel> listFilter;
 
-    private OnItemClickListener listener;
+    final OnItemClickListener listener;
 
     public NiatSholatAdapter(Context context, OnItemClickListener listener, List<NiatSholatModel> list) {
         this.context = context;
@@ -88,7 +88,7 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvId, tvTitle;
         TextView tvTerjemahan,tvArabic, tvLatin;
 

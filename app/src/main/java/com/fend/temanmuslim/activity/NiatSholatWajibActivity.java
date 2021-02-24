@@ -26,24 +26,20 @@ public class NiatSholatWajibActivity extends AppCompatActivity implements NiatSh
 
     private List<NiatSholatModel> list;
     private NiatSholatAdapter adapter;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_niat_sholat_wajib);
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
 
         list = new ArrayList<>();
         adapter = new NiatSholatAdapter(this, this, list);
 
-        recyclerView = findViewById(R.id.rvNiatShalat);
+        RecyclerView recyclerView = findViewById(R.id.rvNiatShalat);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

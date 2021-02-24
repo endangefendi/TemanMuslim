@@ -3,7 +3,6 @@ package com.fend.temanmuslim.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -21,12 +20,10 @@ public class DetailKisahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_kisah);
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
+
         String name = getIntent().getStringExtra("name");
         String des = getIntent().getStringExtra("description");
         int icon = getIntent().getIntExtra("icon", 0);

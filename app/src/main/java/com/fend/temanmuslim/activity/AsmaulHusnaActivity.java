@@ -9,16 +9,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.fend.temanmuslim.R;
-import com.fend.temanmuslim.adapter.AsmaulHusnaAdapter;
 import com.fend.temanmuslim.adapter.AsmaulHusnaAdapter;
 import com.fend.temanmuslim.model.AsmaulHusnaModel;
 import com.fend.temanmuslim.utils.CustomGridView;
@@ -43,12 +39,9 @@ public class AsmaulHusnaActivity extends AppCompatActivity implements AsmaulHusn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asmaul_husna);
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
 
         list = new ArrayList<>();
         adapter = new AsmaulHusnaAdapter(this, this, list);

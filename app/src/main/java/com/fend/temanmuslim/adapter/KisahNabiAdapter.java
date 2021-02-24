@@ -26,7 +26,7 @@ public class KisahNabiAdapter extends RecyclerView.Adapter<KisahNabiAdapter.View
     private List<KisahNabiModel> list;
     private final ArrayList<KisahNabiModel> listFilter;
 
-    private OnItemClickListener listener;
+    final OnItemClickListener listener;
 
     public KisahNabiAdapter(Context context, OnItemClickListener listener, List<KisahNabiModel> list) {
         this.context = context;
@@ -47,7 +47,7 @@ public class KisahNabiAdapter extends RecyclerView.Adapter<KisahNabiAdapter.View
     @Override
     public KisahNabiAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_kisah_nabi, parent, false);
-        KisahNabiAdapter.ViewHolder vh = new KisahNabiAdapter.ViewHolder(view);
+        KisahNabiAdapter.ViewHolder vh = new ViewHolder(view);
         return vh;
     }
 
@@ -74,32 +74,29 @@ public class KisahNabiAdapter extends RecyclerView.Adapter<KisahNabiAdapter.View
     public void onBindViewHolder(@NonNull KisahNabiAdapter.ViewHolder holder, final int position) {
         final KisahNabiModel item = list.get(position);
 
-        holder.tvId.setText(item.getId()+".");
-        holder.tvTitle.setText("Kisah "+item.getName());
+        String no = item.getId()+".";
+        String judul ="Kisah "+item.getName();
+        String tempat = "Kejadian: "+item.getTmp();
+        holder.tvId.setText(no);
+        holder.tvTitle.setText(judul);
         holder.tvTitle.setSelected(true);
-        holder.tvTmp.setText("Kejadian: "+item.getTmp());
+        holder.tvTmp.setText(tempat);
         holder.icon.setImageResource(item.getIcon());
 
-        holder.parent1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (listener != null) listener.onItemClicked(position, item);
-            }
-        });
+        holder.parent1.setOnClickListener(view1 -> {
+                    if (listener != null) listener.onItemClicked(position, item);
+                }
+        );
 
-        holder.parent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (listener != null) listener.onItemClicked(position, item);
-            }
-        });
+        holder.parent.setOnClickListener(view1 -> {
+                    if (listener != null) listener.onItemClicked(position, item);
+                }
+        );
 
-        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (listener != null) listener.onItemClicked(position, item);
-            }
-        });
+        holder.tvTitle.setOnClickListener(view1 -> {
+                    if (listener != null) listener.onItemClicked(position, item);
+                }
+        );
     }
 
     @Override
@@ -108,7 +105,7 @@ public class KisahNabiAdapter extends RecyclerView.Adapter<KisahNabiAdapter.View
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvId, tvTmp, tvTitle;
         ImageView icon;
         CardView parent;

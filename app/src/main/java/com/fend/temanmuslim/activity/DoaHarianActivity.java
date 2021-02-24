@@ -31,7 +31,6 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
 
     private List<DoaModel> list;
     private DoaAdapter adapter;
-    private RecyclerView recyclerView;
     private ImageButton bt_clear, btn_cari;
     private View lyt_no_item;
 
@@ -40,12 +39,9 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doa_harian);
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
 
         list = new ArrayList<>();
         adapter = new DoaAdapter(this, this, list);
@@ -56,7 +52,7 @@ public class DoaHarianActivity extends AppCompatActivity implements DoaAdapter.O
         lyt_no_item.setVisibility(View.GONE);
         btn_cari = findViewById(R.id.btn_cari);
         bt_clear = findViewById(R.id.btn_clear);
-        recyclerView = findViewById(R.id.rvListDoa);
+        RecyclerView recyclerView = findViewById(R.id.rvListDoa);
         btn_cari.setVisibility(View.VISIBLE);
         bt_clear.setVisibility(View.GONE);
 

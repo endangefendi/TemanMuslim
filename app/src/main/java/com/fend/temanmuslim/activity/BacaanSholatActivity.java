@@ -26,24 +26,20 @@ public class BacaanSholatActivity extends AppCompatActivity implements BacaanSho
 
     private List<BacaanSholatModel> list;
     private BacaanSholatAdapter adapter;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bacaan_sholat);
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
 
         list = new ArrayList<>();
         adapter = new BacaanSholatAdapter(this, this, list);
 
-        recyclerView = findViewById(R.id.rvBacaanShalat);
+        RecyclerView recyclerView = findViewById(R.id.rvBacaanShalat);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

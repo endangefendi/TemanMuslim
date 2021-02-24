@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -14,7 +13,6 @@ import androidx.cardview.widget.CardView;
 
 import com.fend.temanmuslim.R;
 import com.fend.temanmuslim.model.AsmaulHusnaModel;
-import com.github.florent37.expansionpanel.ExpansionLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ public class AsmaulHusnaAdapter extends BaseAdapter {
     private List<AsmaulHusnaModel> list;
     private final ArrayList<AsmaulHusnaModel> listFilter;
 
-    private OnItemClickListener listener;
+    private final OnItemClickListener listener;
 
     public AsmaulHusnaAdapter(Context context, OnItemClickListener listener, List<AsmaulHusnaModel> list) {
         this.context = context;
@@ -96,26 +94,20 @@ public class AsmaulHusnaAdapter extends BaseAdapter {
         tvArabic.setText(item.getArabic());
 
         CardView layout = view.findViewById(R.id.parent);
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(listener != null) listener.onItemClicked(position, item);
-            }
-        });
+        layout.setOnClickListener(view1 -> {
+                    if (listener != null) listener.onItemClicked(position, item);
+                }
+        );
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(listener != null) listener.onItemClicked(position, item);
-            }
-        });
+        view.setOnClickListener(view1 -> {
+                    if (listener != null) listener.onItemClicked(position, item);
+                }
+        );
 
-        tvArabic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(listener != null) listener.onItemClicked(position, item);
-            }
-        });
+        tvArabic.setOnClickListener(view1 -> {
+                    if (listener != null) listener.onItemClicked(position, item);
+                }
+        );
 
         return view;
     }

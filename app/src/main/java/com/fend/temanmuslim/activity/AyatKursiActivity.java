@@ -39,12 +39,9 @@ public class AyatKursiActivity extends AppCompatActivity {
         txtTerjemahan = findViewById(R.id.txtTerjemahan);
         getAyatKursi();
         ImageButton iv_back= findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        iv_back.setOnClickListener(view ->
+                onBackPressed()
+        );
     }
 
     private void getAyatKursi() {

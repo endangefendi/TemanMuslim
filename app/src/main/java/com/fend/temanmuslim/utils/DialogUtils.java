@@ -22,8 +22,7 @@ import com.fend.temanmuslim.R;
 
 public class DialogUtils {
 
-
-    private Activity activity;
+    private final Activity activity;
 
     public DialogUtils(Activity activity) {
         this.activity = activity;
