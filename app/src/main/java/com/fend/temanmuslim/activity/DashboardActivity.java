@@ -40,7 +40,7 @@ public class DashboardActivity extends AppCompatActivity {
         frame_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                popUpLabel();
+                popUpInfo();
             }
         });
 
@@ -74,12 +74,19 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this, KisahNabiActivity.class));
             }
         });
+        LinearLayout linearAsmaulHusna = findViewById(R.id.linearAsmaulHusna);
+        linearAsmaulHusna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this, AsmaulHusnaActivity.class));
+            }
+        });
     }
 
     private AlertDialog.Builder alert;
     private AlertDialog ad;
 
-    private void popUpLabel() {
+    private void popUpInfo() {
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         assert inflater != null;
