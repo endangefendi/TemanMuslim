@@ -70,9 +70,14 @@ public class BacaanSholatAdapter extends RecyclerView.Adapter<BacaanSholatAdapte
     public void onBindViewHolder(@NonNull BacaanSholatAdapter.ViewHolder holder, final int position) {
         final BacaanSholatModel item = list.get(position);
 
+        if (item.getId().length()>1){
+            holder.tvId.setTextSize(10);
+        }
+
         if (item.getId().length()>2){
             holder.tvId.setTextSize(9);
         }
+
         holder.tvId.setText(item.getId());
 
         holder.tvTitle.setText(item.getName());

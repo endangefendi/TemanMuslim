@@ -91,6 +91,11 @@ public class AsmaulHusnaAdapter extends BaseAdapter {
         if (item.getIndex().length()>1){
             tvId.setTextSize(7);
         }
+
+        if (item.getIndex().length()>2){
+            tvId.setTextSize(6);
+        }
+
         tvArabic.setText(item.getArabic());
 
         CardView layout = view.findViewById(R.id.parent);

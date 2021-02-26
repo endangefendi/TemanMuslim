@@ -22,7 +22,7 @@
         android:layout_below="@id/btn_close"
         android:id="@+id/parent_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_290sdp"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/_5sdp"
         card_view:cardBackgroundColor="@android:color/transparent"
         app:cardElevation="0dp"
@@ -32,22 +32,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="@dimen/_5sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:padding="@dimen/_15sdp"
+            android:background="@drawable/gradient_blue"
             android:gravity="center">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:autoLink="web"
-                android:layout_margin="@dimen/_5sdp"
-                android:text="The icon or image in this application is obtained from the free version https://www.flaticon.com and https://pngtree.com/so/muslim"/>
-
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:text="@string/about_app"/>
 
             <TextView
-                android:layout_margin="@dimen/_5sdp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Sumberdata di dapat dari sana sini sehingga menjadi aplikasi hehehe"/>
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:text="Sumber:"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoLink="web"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Beberapa icon dan gambar di dapat https://www.flaticon.com dan https://pngtree.com/so/muslim free version"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/white"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Sumber data di dapat dari Islamic Rest API Official milik Zhirrr "/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_green">
+    android:background="@drawable/ic_bg"
+    >
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -129,18 +130,24 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewNiatShalat"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/frame_search"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:background="@drawable/bg_rounded_rect">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frame_search"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:contentPadding="@dimen/_5sdp">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:scrollbars="none"
+            android:scrollIndicators="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,7 +158,12 @@
                     android:id="@+id/rvListDoa"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/_2sdp" />
+                    android:scrollIndicators="none"
+                    android:scrollbars="none"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_2sdp" />
                 <include
                     android:id="@+id/lyt_no_item"
                     layout="@layout/no_item"
@@ -160,6 +172,6 @@
 
         </androidx.core.widget.NestedScrollView>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

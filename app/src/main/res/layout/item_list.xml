@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginStart="@dimen/_2sdp"
+    android:layout_marginEnd="@dimen/_2sdp"
     app:cardCornerRadius="@dimen/_5sdp"
     app:cardElevation="@dimen/_2sdp"
     app:contentPadding="@dimen/_5sdp">
@@ -26,7 +29,7 @@
                 android:text="1"
                 android:padding="@dimen/_2sdp"
                 android:textColor="@android:color/white"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -35,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginStart="@dimen/_7sdp"
             android:layout_toEndOf="@id/relativeRow"
             android:orientation="vertical">
 
@@ -85,7 +87,7 @@
                         android:layout_gravity="end"
                         android:textAlignment="viewEnd"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:text="@string/app_name"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_19sdp"
@@ -96,7 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_3sdp"
                         android:fontFamily="avenir_medium_09"
                         android:text="@string/app_name"
@@ -111,7 +113,7 @@
                         android:layout_gravity="center_vertical"
                         android:fontFamily="avenir_medium_09"
                         android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:text="@string/app_name"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_12sdp" />

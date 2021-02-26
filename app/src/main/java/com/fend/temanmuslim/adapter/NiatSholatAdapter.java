@@ -70,9 +70,14 @@ public class NiatSholatAdapter extends RecyclerView.Adapter<NiatSholatAdapter.Vi
     public void onBindViewHolder(@NonNull NiatSholatAdapter.ViewHolder holder, final int position) {
         final NiatSholatModel item = list.get(position);
 
+        if (item.getId().length()>1){
+            holder.tvId.setTextSize(10);
+        }
+
         if (item.getId().length()>2){
             holder.tvId.setTextSize(9);
         }
+
         holder.tvId.setText(item.getId());
 
         holder.tvTitle.setText(item.getName());

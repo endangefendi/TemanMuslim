@@ -70,6 +70,10 @@ public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull DoaAdapter.ViewHolder holder, final int position) {
         final DoaModel item = list.get(position);
 
+        if (item.getId().length()>1){
+            holder.tvId.setTextSize(10);
+        }
+
         if (item.getId().length()>2){
             holder.tvId.setTextSize(9);
         }
